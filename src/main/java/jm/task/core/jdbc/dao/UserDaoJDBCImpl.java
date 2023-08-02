@@ -19,7 +19,7 @@ public class UserDaoJDBCImpl implements UserDao {
             statement.executeUpdate("CREATE TABLE Users (id BIGINT PRIMARY KEY AUTO_INCREMENT," +
                     "name VARCHAR(45), lastName VARCHAR(45), age TINYINT)");
         } catch (SQLException e) {
-            System.out.println("Такая таблица уже существует");
+            e.printStackTrace();
         }
     }
 
@@ -27,7 +27,7 @@ public class UserDaoJDBCImpl implements UserDao {
         try (Statement statement = connection.createStatement()) {
             statement.executeUpdate("DROP TABLE Users");
         } catch (SQLException e) {
-            System.out.println("Такой таблицы не существует");
+            e.printStackTrace();
         }
 
     }
