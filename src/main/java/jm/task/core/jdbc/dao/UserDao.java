@@ -16,4 +16,6 @@ public interface UserDao {
     List<User> getAllUsers();
 
     void cleanUsersTable();
+
+    default void closeSessionFactory() {}
 }
