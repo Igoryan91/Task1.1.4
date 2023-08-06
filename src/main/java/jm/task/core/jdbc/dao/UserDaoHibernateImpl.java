@@ -13,9 +13,7 @@ public class UserDaoHibernateImpl implements UserDao {
     private SessionFactory sessionFactory = Util.getSessionFactory();
 
     public UserDaoHibernateImpl() {
-
     }
-
 
     @Override
     public void createUsersTable() {
@@ -101,10 +99,5 @@ public class UserDaoHibernateImpl implements UserDao {
                 session.getTransaction().rollback();
             }
         }
-    }
-
-    @Override
-    public void closeSessionFactory() {
-        sessionFactory.close();
     }
 }
